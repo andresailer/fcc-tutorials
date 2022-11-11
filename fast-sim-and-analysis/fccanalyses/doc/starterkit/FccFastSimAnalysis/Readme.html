@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.3. FCC: Getting started with analysing simulated events &mdash; FCC Tutorials  documentation</title>
+      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/custom-admonitions.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../../_static/copybutton.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../../../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.4. FCC: tracking and vertexing example using specific flavour decays" href="../FccFastSimVertexing/Readme.html" />
+    <link rel="prev" title="2.2. FCC: Getting started with simulating events in Delphes" href="../../../../k4simdelphes/doc/starterkit/FccFastSimDelphes/Readme.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../index.html" class="icon icon-home"> FCC Tutorials
+            <img src="../../../../../_static/fcc-logo-light.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../software-basics/README.html">1. First  Steps</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../README.html">2. Generators, Fast Simulation and Analysis</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../FccFastSimGeneration.html">2.1. FCC: Getting started with event generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../k4simdelphes/doc/starterkit/FccFastSimDelphes/Readme.html">2.2. FCC: Getting started with simulating events in Delphes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. FCC: Getting started with analysing simulated events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#part-ii-analyse-with-fccanalyses">2.3.1. Part II: Analyse with FCCAnalyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../FccFastSimVertexing/Readme.html">2.4. FCC: tracking and vertexing example using specific flavour decays</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../full-detector-simulations/README.html">3. Full Detector Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../distributed-computing/README.html">4. Distributed computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../developing-fcc-software/README.html">5. Developing FCCSW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../CONTRIBUTING.html">6. Contributing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">External links:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://hsf-training.github.io/analysis-essentials/">Analysis essentials</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://lhcb.github.io/starterkit">LHCb starterkit</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://hep-fcc.github.io/glossary">FCC software glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">FCC Tutorials</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../README.html"><span class="section-number">2. </span>Generators, Fast Simulation and Analysis</a> &raquo;</li>
+      <li><span class="section-number">2.3. </span>FCC: Getting started with analysing simulated events</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/HEP-FCC/fcc-tutorials/blob/master/fast-sim-and-analysis/fccanalyses/doc/starterkit/FccFastSimAnalysis/Readme.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="fcc-getting-started-with-analysing-simulated-events">
+<h1><span class="section-number">2.3. </span>FCC: Getting started with analysing simulated events<a class="headerlink" href="#fcc-getting-started-with-analysing-simulated-events" title="Permalink to this heading"></a></h1>
+<div class="objectives admonition">
+<p class="admonition-title">Learning Objectives</p>
+<p>This tutorial will teach you how to:</p>
+<ul class="simple">
+<li><p>apply an <strong>event selection</strong> on Delphes samples with <strong>FCCAnalyses</strong></p></li>
+<li><p>produce <strong>flat ntuples</strong> with observables of interest with <strong>FCCAnalyses</strong></p></li>
+<li><p>produce plots with <strong>FCCAnalyses</strong></p></li>
+<li><p>compare distributions produced with different generators</p></li>
+</ul>
+</div>
+<section id="part-ii-analyse-with-fccanalyses">
+<h2><span class="section-number">2.3.1. </span>Part II: Analyse with FCCAnalyses<a class="headerlink" href="#part-ii-analyse-with-fccanalyses" title="Permalink to this heading"></a></h2>
+<p>We stay in the same directory where we have produced our samples with <code class="docutils literal notranslate"><span class="pre">DelphesPythia8_EDM4HEP</span></code>.</p>
+<p>For this part we start by making sure we can use FCCAnalyses by checking we can load the library correctly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!python</span>
+<span class="kn">import</span> <span class="nn">ROOT</span>
+<span class="n">ROOT</span><span class="o">.</span><span class="n">gSystem</span><span class="o">.</span><span class="n">Load</span><span class="p">(</span><span class="s2">&quot;libFCCAnalyses&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>if no error message, it means we can load it.</p>
+<p>Alternatively, you can check with spack, replacing <code class="docutils literal notranslate"><span class="pre">&lt;version&gt;</span></code> by the key4hep version you have set up.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">spack</span> <span class="n">find</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">d</span> <span class="n">key4hep</span><span class="o">-</span><span class="n">stack</span><span class="o">@&lt;</span><span class="n">version</span><span class="o">&gt;</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">fccanalyses</span>
+</pre></div>
+</div>
+<p>create a file called <code class="docutils literal notranslate"><span class="pre">analysis_stage1.py</span></code> containing</p>
+<div class="highlight-{python notranslate"><div class="highlight"><pre><span></span>#Mandatory: RDFanalysis class where the use defines the operations on the TTree
+class RDFanalysis():
+
+    #__________________________________________________________
+    #Mandatory: analysers funtion to define the analysers to process, please make sure you return the last dataframe, in this example it is df2
+    def analysers(df):
+        df2 = (
+            df
+            # define an alias for muon index collection
+            .Alias(&quot;Muon0&quot;, &quot;Muon#0.index&quot;)
+            # define the muon collection
+            .Define(&quot;muons&quot;,  &quot;ReconstructedParticle::get(Muon0, ReconstructedParticles)&quot;)
+            #select muons on pT
+            .Define(&quot;selected_muons&quot;, &quot;ReconstructedParticle::sel_pt(10.)(muons)&quot;)
+            # create branch with muon transverse momentum
+            .Define(&quot;selected_muons_pt&quot;, &quot;ReconstructedParticle::get_pt(selected_muons)&quot;)
+            # create branch with muon rapidity
+            .Define(&quot;selected_muons_y&quot;,  &quot;ReconstructedParticle::get_y(selected_muons)&quot;)
+            # create branch with muon total momentum
+            .Define(&quot;selected_muons_p&quot;,     &quot;ReconstructedParticle::get_p(selected_muons)&quot;)
+            # create branch with muon energy
+            .Define(&quot;selected_muons_e&quot;,     &quot;ReconstructedParticle::get_e(selected_muons)&quot;)
+            # find zed candidates from  di-muon resonances
+            .Define(&quot;zed_leptonic&quot;,         &quot;ReconstructedParticle::resonanceBuilder(91)(selected_muons)&quot;)
+            # create branch with zed mass
+            .Define(&quot;zed_leptonic_m&quot;,       &quot;ReconstructedParticle::get_mass(zed_leptonic)&quot;)
+            # create branch with zed transverse momenta
+            .Define(&quot;zed_leptonic_pt&quot;,      &quot;ReconstructedParticle::get_pt(zed_leptonic)&quot;)
+            # calculate recoil of zed_leptonic
+            .Define(&quot;zed_leptonic_recoil&quot;,  &quot;ReconstructedParticle::recoilBuilder(240)(zed_leptonic)&quot;)
+            # create branch with recoil mass
+            .Define(&quot;zed_leptonic_recoil_m&quot;,&quot;ReconstructedParticle::get_mass(zed_leptonic_recoil)&quot;)
+            # create branch with leptonic charge
+            .Define(&quot;zed_leptonic_charge&quot;,&quot;ReconstructedParticle::get_charge(zed_leptonic)&quot;)
+            # Filter at least one candidate
+            .Filter(&quot;zed_leptonic_recoil_m.size()&gt;0&quot;)
+        )
+        return df2
+
+    #__________________________________________________________
+    #Mandatory: output function, please make sure you return the branchlist as a python list
+    def output():
+        branchList = [
+            &quot;selected_muons_pt&quot;,
+            &quot;selected_muons_y&quot;,
+            &quot;selected_muons_p&quot;,
+            &quot;selected_muons_e&quot;,
+            &quot;zed_leptonic_pt&quot;,
+            &quot;zed_leptonic_m&quot;,
+            &quot;zed_leptonic_charge&quot;,
+            &quot;zed_leptonic_recoil_m&quot;
+        ]
+        return branchList
+</pre></div>
+</div>
+<p>And run the analysis stage 1 on previously produced samples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># for testing purposes, take these from eos</span>
+<span class="nv">TESTSAMPLEDIR</span><span class="o">=</span>https://fccsw.web.cern.ch/testsamples/tutorial/
+<span class="c1"># if you want to use the previously produced samples, uncomment:</span>
+<span class="c1"># TESTSAMPLEDIR=$PWD</span>
+fccanalysis run analysis_stage1.py --output p8_ee_ZH_ecm240.root --files-list <span class="nv">$TESTSAMPLEDIR</span>/p8_ee_ZH_ecm240_edm4hep.root
+fccanalysis run analysis_stage1.py --output p8_ee_ZZ_ecm240.root --files-list <span class="nv">$TESTSAMPLEDIR</span>/p8_ee_ZZ_ecm240_edm4hep.root
+fccanalysis run analysis_stage1.py --output p8_ee_WW_ecm240.root --files-list <span class="nv">$TESTSAMPLEDIR</span>/p8_ee_WW_ecm240_edm4hep.root
+</pre></div>
+</div>
+<p>this will produce small ntuples pre-selection files with only variables you are interested in.</p>
+<p>This first analysis stage usually runs on large samples on batch, and the idea is to produce small ntuples with less variables. From those small ntuples we could consider running a second analysis stage, for example let us create a file called <code class="docutils literal notranslate"><span class="pre">analysis_stage2.py</span></code> containing:</p>
+<div class="highlight-{python notranslate"><div class="highlight"><pre><span></span>processList = {
+    &#39;p8_ee_ZZ_ecm240&#39;:{},
+    &#39;p8_ee_WW_ecm240&#39;:{},
+    &#39;p8_ee_ZH_ecm240&#39;:{}
+}
+
+inputDir    = &quot;&quot;
+outputDir   = &quot;stage2&quot;
+
+#USER DEFINED CODE
+import ROOT
+ROOT.gInterpreter.Declare(&quot;&quot;&quot;
+bool myFilter(ROOT::VecOps::RVec&lt;float&gt; mass) {
+    for (size_t i = 0; i &lt; mass.size(); ++i) {
+        if (mass.at(i)&gt;80. &amp;&amp; mass.at(i)&lt;100.)
+            return true;
+    }
+    return false;
+}
+&quot;&quot;&quot;)
+#END USER DEFINED CODE
+
+#Mandatory: RDFanalysis class where the use defines the operations on the TTree
+class RDFanalysis():
+
+    #__________________________________________________________
+    #Mandatory: analysers funtion to define the analysers to process, please make sure you return the last dataframe, in this example it is df2
+    def analysers(df):
+        df2 = (df
+               #Filter to have exactly one Z candidate
+               .Filter(&quot;zed_leptonic_m.size() == 1&quot;)
+               #Define Z candidate mass
+               .Define(&quot;Zcand_m&quot;,&quot;zed_leptonic_m[0]&quot;)
+               #Define Z candidate recoil mass
+               .Define(&quot;Zcand_recoil_m&quot;,&quot;zed_leptonic_recoil_m[0]&quot;)
+               #Define Z candidate pt
+               .Define(&quot;Zcand_pt&quot;,&quot;zed_leptonic_pt[0]&quot;)
+               #Define Z candidate charge
+               .Define(&quot;Zcand_q&quot;,&quot;zed_leptonic_charge[0]&quot;)
+               #Define new var rdf entry (example)
+               .Define(&quot;entry&quot;, &quot;rdfentry_&quot;)
+               #Define a weight based on entry (inline example of possible operations)
+               .Define(&quot;weight&quot;, &quot;return 1./(entry+1)&quot;)
+               #Define a variable based on a custom filter
+               .Define(&quot;MyFilter&quot;, &quot;myFilter(zed_leptonic_m)&quot;)
+               )
+        return df2
+
+    #__________________________________________________________
+    #Mandatory: output function, please make sure you return the branchlist as a python list.
+    def output():
+        branchList = [
+            &quot;Zcand_m&quot;, &quot;Zcand_pt&quot;, &quot;Zcand_q&quot;,&quot;MyFilter&quot;,&quot;Zcand_recoil_m&quot;,
+            &quot;entry&quot;,&quot;weight&quot;
+        ]
+        return branchList
+</pre></div>
+</div>
+<p>And run the analysis stage 2 on previously produced samples in stage 1:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccanalysis run analysis_stage2.py
+</pre></div>
+</div>
+<p>lets now run the final selection on the pre-selection files, for that create a <code class="docutils literal notranslate"><span class="pre">analysis_final.py</span></code> file:</p>
+<div class="highlight-{python notranslate"><div class="highlight"><pre><span></span>#Input directory where the files produced at the pre-selection level are
+inputDir  = &quot;stage2&quot;
+
+#Input directory where the files produced at the pre-selection level are
+outputDir  = &quot;final&quot;
+
+processList = {
+    &#39;p8_ee_ZZ_ecm240&#39;:{},
+    &#39;p8_ee_WW_ecm240&#39;:{},
+    &#39;p8_ee_ZH_ecm240&#39;:{}
+}
+
+#Link to the dictonary that contains all the cross section informations etc...
+procDict = &quot;https://fcc-physics-events.web.cern.ch/fcc-physics-events/sharedFiles/FCCee_procDict_spring2021_IDEA.json&quot;
+
+#produces ROOT TTrees, default is False
+doTree = True
+
+###Dictionnay of the list of cuts. The key is the name of the selection that will be added to the output file
+cutList = {&quot;sel0&quot;:&quot;Zcand_q == 0&quot;,
+           &quot;sel1&quot;:&quot;Zcand_q == -1 || Zcand_q == 1&quot;,
+           &quot;sel2&quot;:&quot;Zcand_m &gt; 80 &amp;&amp; Zcand_m &lt; 100&quot;,
+           &quot;sel3&quot;:&quot;MyFilter==true &amp;&amp; (Zcand_m &lt; 80 || Zcand_m &gt; 100)&quot;
+            }
+
+
+#Dictionary for the ouput variable/hitograms. The key is the name of the variable in the output files. &quot;name&quot; is the name of the variable in the input file, &quot;title&quot; is the x-axis label of the histogram, &quot;bin&quot; the number of bins of the histogram, &quot;xmin&quot; the minimum x-axis value and &quot;xmax&quot; the maximum x-axis value.
+histoList = {
+    &quot;mz&quot;:{&quot;name&quot;:&quot;Zcand_m&quot;,&quot;title&quot;:&quot;m_{Z} [GeV]&quot;,&quot;bin&quot;:125,&quot;xmin&quot;:0,&quot;xmax&quot;:250},
+    &quot;mz_zoom&quot;:{&quot;name&quot;:&quot;Zcand_m&quot;,&quot;title&quot;:&quot;m_{Z} [GeV]&quot;,&quot;bin&quot;:40,&quot;xmin&quot;:80,&quot;xmax&quot;:100},
+    &quot;leptonic_recoil_m&quot;:{&quot;name&quot;:&quot;Zcand_recoil_m&quot;,&quot;title&quot;:&quot;Z leptonic recoil [GeV]&quot;,&quot;bin&quot;:100,&quot;xmin&quot;:0,&quot;xmax&quot;:200},
+    &quot;leptonic_recoil_m_zoom&quot;:{&quot;name&quot;:&quot;Zcand_recoil_m&quot;,&quot;title&quot;:&quot;Z leptonic recoil [GeV]&quot;,&quot;bin&quot;:200,&quot;xmin&quot;:80,&quot;xmax&quot;:160},
+    &quot;leptonic_recoil_m_zoom1&quot;:{&quot;name&quot;:&quot;Zcand_recoil_m&quot;,&quot;title&quot;:&quot;Z leptonic recoil [GeV]&quot;,&quot;bin&quot;:100,&quot;xmin&quot;:120,&quot;xmax&quot;:140},
+    &quot;leptonic_recoil_m_zoom2&quot;:{&quot;name&quot;:&quot;Zcand_recoil_m&quot;,&quot;title&quot;:&quot;Z leptonic recoil [GeV]&quot;,&quot;bin&quot;:200,&quot;xmin&quot;:120,&quot;xmax&quot;:140},
+    &quot;leptonic_recoil_m_zoom3&quot;:{&quot;name&quot;:&quot;Zcand_recoil_m&quot;,&quot;title&quot;:&quot;Z leptonic recoil [GeV]&quot;,&quot;bin&quot;:400,&quot;xmin&quot;:120,&quot;xmax&quot;:140},
+    &quot;leptonic_recoil_m_zoom4&quot;:{&quot;name&quot;:&quot;Zcand_recoil_m&quot;,&quot;title&quot;:&quot;Z leptonic recoil [GeV]&quot;,&quot;bin&quot;:800,&quot;xmin&quot;:120,&quot;xmax&quot;:140},
+    &quot;leptonic_recoil_m_zoom5&quot;:{&quot;name&quot;:&quot;Zcand_recoil_m&quot;,&quot;title&quot;:&quot;Z leptonic recoil [GeV]&quot;,&quot;bin&quot;:2000,&quot;xmin&quot;:120,&quot;xmax&quot;:140},
+    &quot;leptonic_recoil_m_zoom6&quot;:{&quot;name&quot;:&quot;Zcand_recoil_m&quot;,&quot;title&quot;:&quot;Z leptonic recoil [GeV]&quot;,&quot;bin&quot;:100,&quot;xmin&quot;:130.3,&quot;xmax&quot;:132.5},
+}
+</pre></div>
+</div>
+<p>and run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccanalysis final analysis_final.py
+</pre></div>
+</div>
+<p>this will produce 2 files for each sample and each selection, one with final tree with variables of interest, and one with histograms.</p>
+<p>Now we can write the code to produce plots, in <code class="docutils literal notranslate"><span class="pre">analysis_plots.py</span></code>:</p>
+<div class="highlight-{python notranslate"><div class="highlight"><pre><span></span>import ROOT
+
+# global parameters
+intLumi        = 5.0e+06 #in pb-1
+ana_tex        = &#39;e^{+}e^{-} #rightarrow ZH #rightarrow #mu^{+}#mu^{-} + X&#39;
+delphesVersion = &#39;3.4.2&#39;
+energy         = 240.0
+collider       = &#39;FCC-ee&#39;
+inputDir       = &#39;final&#39;
+formats        = [&#39;png&#39;,&#39;pdf&#39;]
+yaxis          = [&#39;lin&#39;,&#39;log&#39;]
+stacksig       = [&#39;stack&#39;,&#39;nostack&#39;]
+outdir         = &#39;plots/&#39;
+
+variables = [&#39;mz&#39;,&#39;mz_zoom&#39;,&#39;leptonic_recoil_m&#39;,&#39;leptonic_recoil_m_zoom&#39;]
+
+###Dictionary with the analysis name as a key, and the list of selections to be plotted for this analysis. The name of the selections should be the same than in the final selection
+selections = {}
+selections[&#39;ZH&#39;]   = [&quot;sel0&quot;,&quot;sel1&quot;,&quot;sel2&quot;,&quot;sel3&quot;]
+selections[&#39;ZH_2&#39;] = [&quot;sel0&quot;,&quot;sel1&quot;]
+
+extralabel = {}
+extralabel[&#39;sel0&#39;] = &quot;Selection: N_{Z} = 1&quot;
+extralabel[&#39;sel1&#39;] = &quot;Selection: N_{Z} = 1; 80 GeV &lt; m_{Z} &lt; 100 GeV&quot;
+
+colors = {}
+colors[&#39;ZH&#39;] = ROOT.kRed
+colors[&#39;WW&#39;] = ROOT.kBlue+1
+colors[&#39;ZZ&#39;] = ROOT.kGreen+2
+colors[&#39;VV&#39;] = ROOT.kGreen+3
+
+plots = {}
+plots[&#39;ZH&#39;] = {&#39;signal&#39;:{&#39;ZH&#39;:[&#39;p8_ee_ZH_ecm240&#39;]},
+               &#39;backgrounds&#39;:{&#39;WW&#39;:[&#39;p8_ee_WW_ecm240&#39;],
+                              &#39;ZZ&#39;:[&#39;p8_ee_ZZ_ecm240&#39;]}
+           }
+
+
+plots[&#39;ZH_2&#39;] = {&#39;signal&#39;:{&#39;ZH&#39;:[&#39;p8_ee_ZH_ecm240&#39;]},
+                 &#39;backgrounds&#39;:{&#39;VV&#39;:[&#39;p8_ee_WW_ecm240&#39;,&#39;p8_ee_ZZ_ecm240&#39;]}
+             }
+
+legend = {}
+legend[&#39;ZH&#39;] = &#39;ZH&#39;
+legend[&#39;WW&#39;] = &#39;WW&#39;
+legend[&#39;ZZ&#39;] = &#39;ZZ&#39;
+legend[&#39;VV&#39;] = &#39;VV boson&#39;
+</pre></div>
+</div>
+<p>Run the plotting script with the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fccanalysis plots analysis_plots.py
+</pre></div>
+</div>
+<p>and look at them in <code class="docutils literal notranslate"><span class="pre">plots/</span></code>.</p>
+<p>Please note that the event statistics is not great because we only produced on 10 000 events in the <code class="docutils literal notranslate"><span class="pre">k4SimDelphes</span></code> step.</p>
+<div class="challenge admonition">
+<p class="admonition-title">Exercises</p>
+<ol class="arabic simple">
+<li><p>Modify <code class="docutils literal notranslate"><span class="pre">plots.py</span></code> to include the muon tracks (look at the output file <code class="docutils literal notranslate"><span class="pre">_edm4hep.root</span></code> or to <code class="docutils literal notranslate"><span class="pre">analysis.py</span></code> to check the name.</p></li>
+<li><p>Add the track informations to the output files by modifying <code class="docutils literal notranslate"><span class="pre">analysis.py</span></code> for the <code class="docutils literal notranslate"><span class="pre">efcharged</span></code> collection and produce plots with them as in 1)</p></li>
+<li><p>Produce plots with larger statistics by re-running <code class="docutils literal notranslate"><span class="pre">DelphesPythia8_EDM4HEP</span></code> with more events.</p></li>
+<li><p><strong>This part can only be on lxplus and for people having the access rights to eos and the analysis dictonary</strong>
+In order to produce plots with more statistics using centrally produced samples, we could use already processed large statistics samples.
+To do so we re-run the pre-selection over 10 percent of the total statistics <a class="reference external" href="http://fcc-physics-events.web.cern.ch/fcc-physics-events/Delphesevents_spring2021_IDEA.php">here</a>.
+Add to your a <code class="docutils literal notranslate"><span class="pre">analysis_stage1.py</span></code> file</p></li>
+</ol>
+<div class="highlight-{python notranslate"><div class="highlight"><pre><span></span>processList = {
+    &#39;p8_ee_ZZ_ecm240&#39;:{&#39;fraction&#39;:0.1},
+    &#39;p8_ee_WW_ecm240&#39;:{&#39;fraction&#39;:0.1},
+    &#39;p8_ee_ZH_ecm240&#39;:{&#39;fraction&#39;:0.1}
+}
+prodTag     = &quot;FCCee/spring2021/IDEA/&quot;
+</pre></div>
+</div>
+<p>and run</p>
+<div class="highlight-{bash notranslate"><div class="highlight"><pre><span></span>fccanalysis run analysis_stage1.py
+</pre></div>
+</div>
+<p>and as before run the stage 2, final selection and plots:</p>
+<div class="highlight-{bash notranslate"><div class="highlight"><pre><span></span>fccanalysis run analysis_stage2.py
+fccanalysis final analysis_final.py
+fccanalysis plots analysis_plots.py
+</pre></div>
+</div>
+<p>and look at the new plots in <code class="docutils literal notranslate"><span class="pre">plots/</span></code>.</p>
+<p>To further increase the event statistics, increase the value (up to 1) of the parameter <code class="docutils literal notranslate"><span class="pre">fraction</span></code> in <code class="docutils literal notranslate"><span class="pre">analysis_stage1</span></code> (no value mean 1)</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../../../k4simdelphes/doc/starterkit/FccFastSimDelphes/Readme.html" class="btn btn-neutral float-left" title="2.2. FCC: Getting started with simulating events in Delphes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../FccFastSimVertexing/Readme.html" class="btn btn-neutral float-right" title="2.4. FCC: tracking and vertexing example using specific flavour decays" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, CERN.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
